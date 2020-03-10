@@ -1,11 +1,47 @@
-a = [[1,2,-1,-4],
-    [2,3,4,5],
-    [3,4,5,6]]
-b = [1,2,3,4]
+# class Stack:
+#     def __init__(self):
+#         self.items = []
+#     def __str__(self):  
+#         return self.items
+#     __repr_ = __str__
+#     def push(self, item):
+#         self.items.append(item) 
+#     def pop(self):
+#         return self.items.pop()
 
-dict = {"A":3,"B":3}
-print(max(dict))
 
-def get_key (dict, value):
-    return [k for k, v in dict.items() if v == value]
-print(get_key(dict,3))
+# def postfix_calculate(s):
+#     stack = Stack()
+#     for x in s:
+#         if x.isdigit():
+#             stack.push(x)
+#         elif x == "+":
+#             a = stack.pop()
+#             b = stack.pop()
+#             stack.push(int(a)+int(b))
+#             print(stack.items)
+#         elif x == "-":
+#             a = stack.pop()
+#             b = stack.pop()
+#             stack.push(int(b)-int(a))
+#             print(stack.items)
+#         elif x == "*":
+#             a = stack.pop()
+#             b = stack.pop()
+#             stack.push(int(a)*int(b))
+#             print(stack.items)
+#         elif x == "/":
+#             a = stack.pop()
+#             b = stack.pop()
+#             stack.push(int(b)/int(a))
+#             print(stack.items)
+#     return stack.pop()
+    
+
+# strings = "12345*+*+"
+# result = postfix_calculate(strings)
+# print(result)
+
+a = "cba"
+print(a[:2])
+
