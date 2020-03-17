@@ -54,7 +54,6 @@ class Solution(object):
                 right = right.next
             cur = cur.next
         cur.next = right or left
-        print(head)
         return head
 
 head = ListNode(4)
