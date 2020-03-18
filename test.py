@@ -42,7 +42,4 @@
 # result = postfix_calculate(strings)
 # print(result)
 
-a = ['a','b','c']
-print(a.pop())
-print(a)
 
