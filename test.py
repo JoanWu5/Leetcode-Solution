@@ -42,6 +42,7 @@
 # result = postfix_calculate(strings)
 # print(result)
 
-a = "cba"
-print(a[:2])
+a = ['a','b','c']
+print(a.pop())
+print(a)
 
