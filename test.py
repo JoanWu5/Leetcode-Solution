@@ -41,5 +41,6 @@
 # strings = "12345*+*+"
 # result = postfix_calculate(strings)
 # print(result)
-
+a= ['c','a']
+print(''.join(a))
 
