@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: List[str]
         """
         def backtract(combination,next_digits):
-            print(next_digits)
             if len(next_digits)==0:
                 result.append(combination)
             else:
