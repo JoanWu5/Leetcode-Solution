@@ -9,22 +9,7 @@ class Solution(object):
         """
         :type head: ListNode
         :rtype: ListNode
-        """
-        #version 1
-        # cur = head
-        # lst = []
-        # while cur:
-        #     lst.append(cur.val)
-        #     cur = cur.next
-        # lst.sort()
-        # dummy = cur = ListNode(0)
-        # for i in lst:
-        #     node = ListNode(i)
-        #     cur.next = node
-        #     cur = cur.next
-        # return dummy.next
-
-        #version 2:merge sort 
+        """   
         if head is None or head.next is None:
             return head
         slow = head
@@ -36,36 +21,26 @@ class Solution(object):
         slow.next = None
         left = self.sortList(head)
         right = self.sortList(second)
-        return self.merge_sort(left,right)
-
-    def merge_sort(self,left,right):
-        if left is None or right is None:
-            return left or right
-        if left.val > right.val:
-            left,right = right,left
-        head = cur = left
-        left = left.next
-        while left and right:
-            if left.val <right.val:
-                cur.next = left
-                left = left.next
+        return self.mergeTwoLists(left,right)
+        
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        if l1 is None or l2 is None:
+            return l1 or l2
+        dummy = cur = ListNode(0)
+        while l1 and l2:
+            if l1.val<l2.val:
+                cur.next = l1
+                l1 = l1.next
+                cur = cur.next
             else:
-                cur.next = right
-                right = right.next
-            cur = cur.next
-        cur.next = right or left
-        return head
-
-head = ListNode(4)
-head.next = ListNode(2)
-head.next.next = ListNode(1)
-head.next.next.next = ListNode(3)
-
-s = Solution()
-result = s.sortList(head)
-while result:
-    print(result.val)
-    result = result.next
-
-
-
+                cur.next = l2
+                l2 = l2.next
+                cur = cur.next
+        if l1 or l2:
+            cur.next = l1 or l2
+        return dummy.next

@@ -1,10 +1,9 @@
 # Definition for a Node.
-class Node(object):
-    def __init__(self, val, next, random):
-        self.val = val
+class Node:
+    def __init__(self, x, next=None, random=None):
+        self.val = int(x)
         self.next = next
         self.random = random
-
 
 class Solution(object):
     def copyRandomList(self, head):
@@ -14,20 +13,20 @@ class Solution(object):
         """
         nodeDict = {}
         start = Node(0,None,None)
-        newHead,pointer = start,head
+        cur,pointer = start,head
         nodeDict[start] = head
 
         while pointer:
             node = Node(pointer.val,pointer.next,None)
             nodeDict[pointer] = node
-            newHead.next = node
-            newHead,pointer = newHead.next,pointer.next
-
+            cur.next = node
+            cur = cur.next
+            pointer = pointer.next
+        
         pointer = head
         while pointer:
             if pointer.random:
                 nodeDict[pointer].random = nodeDict[pointer.random]
-            pointer = pointer.next 
-
+            pointer = pointer.next
         return start.next
-       
+
